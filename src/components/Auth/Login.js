@@ -1,6 +1,8 @@
 // components/Auth/Login.js
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -11,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <form>
         <label>
@@ -26,6 +28,9 @@ const Login = () => {
         <br />
         <button type="button" onClick={handleLogin}>Login</button>
       </form>
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
     </div>
   );
 };
