@@ -1,6 +1,8 @@
 // components/Auth/Register.js
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Register.css'; // Import the CSS file
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -13,7 +15,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Register</h2>
       <form>
         <label>
@@ -38,6 +40,9 @@ const Register = () => {
         <br />
         <button type="button" onClick={handleRegister}>Register</button>
       </form>
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
     </div>
   );
 };
