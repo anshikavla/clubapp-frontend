@@ -8,11 +8,28 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
-  const [additionalInfo, setAdditionalInfo] = useState('');
+  const [emailId, setEmailId] = useState('');
 
-  const handleRegister = () => {
-    // Implement registration functionality
-  };
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    let result = await fetch(
+    'http://localhost:5000/register', {
+        method: "post",
+        body: JSON.stringify({ username,password,phone,emailId }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    result = await result.json();
+    console.warn(result);
+    if (result) {
+        alert("Data saved succesfully");
+        setUsername("");
+        setPassword("");
+        setPhone("");
+        setEmailId("");
+    }
+}
 
   return (
     <div className="container">
@@ -34,8 +51,8 @@ const Register = () => {
         </label>
         <br />
         <label>
-          Additional Information:
-          <textarea value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} />
+          Email Id:
+          <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} />
         </label>
         <br />
         <button type="button" onClick={handleRegister}>Register</button>
