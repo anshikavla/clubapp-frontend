@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Auth/Login.js';
-import Register from './components/Auth/Register';
-import HomePage from './components/Home/HomePage';
-import Wishlist from './components/Home/Wishlist';
-import Profile from './components/Home/Profile';
-import ClubDetail from './components/Club/ClubDetail';
-import TodayEvents from './components/Events/TodayEvents';
+import Register from './components/Auth/Register.js';
+import HomePage from './components/Home/HomePage.js';
+import Wishlist from './components/Home/Wishlist.js';
+import Profile from './components/Home/Profile.js';
+import ClubDetail from './components/Club/ClubDetail.js';
+import TodayEvents from './components/Events/TodayEvents.js';
 
 function App() {
   return (
