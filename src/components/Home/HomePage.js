@@ -1,20 +1,22 @@
-// components/Home/HomePage.js
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-const HomePage = () => {
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Filters from './Filters';
+import ClubList from './ClubList';
+import './styles.css';
+const App = () => {
   return (
     <div>
-      <h2>Home Page</h2>
-      {/* Add your homepage content, buttons, and functionality here */}
-      <p>
-        Testing Profile Page! <Link to="/profile">Profile Test</Link>
-      </p>
+      <Header />
+      <Sidebar />
+      <main>
+        <Filters />
+        <ClubList />
+      </main>
+      {/* Include your footer here */}
     </div>
-
-    
   );
 };
 
-export default HomePage;
+export default App;
