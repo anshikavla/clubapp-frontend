@@ -1,8 +1,15 @@
 /* components/Auth/Register.css */
 
 .container {
-    width: 300px;
-    margin: auto;
+  border: 2px solid #ff0055;
+  padding: 40px;
+  width: 400px;
+  background-color: #0d0d0e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: left; 
   }
   
   form {

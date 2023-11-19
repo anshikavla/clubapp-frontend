@@ -32,7 +32,7 @@ const Register = () => {
 }
 
   return (
-    <div style={styles.container}>
+    <div className='profile-container'>
       <form>
       <h2>Register</h2>
         <label>
