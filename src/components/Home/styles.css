@@ -6,17 +6,27 @@ body, h1, h2, h3, p, ul, li {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color:  #a6a6a6; /* Darker background color */
-    color: #000; /* Light text color for better contrast */
+    background-image: url('lightpurple.png'); /* Add the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /* Fixed background position */
+    color: #fffefe; /* Light text color for better contrast */
 }
+
 
 /* Header styles */
 header {
+    background-image: url('black.jpg');
     background-color:#660033;
     color: #333; /* White text for better visibility */
     padding: 15px;
     text-align: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-bottom: 5px solid #fff; /* White border at the bottom */
+    border-right: 5px solid #fff; 
+    border-left: 5px solid #fff; 
+
 }
 
 #searchBar {
@@ -34,12 +44,15 @@ header {
 
 /* Sidebar styles */
 aside {
+    background-image: url('black.jpg');
     background-color: #000; /* Dark blue */
     color: #fff;
     width: 200px;
     height: 100vh;
     float: left;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-right: 5px solid #fff; 
+    border-left: 5px solid #fff; 
 }
 
 ul {
@@ -105,7 +118,7 @@ select {
 /* Club list styles */
 .club {
     background-color: #e6e6e6;
-    border: 1px solid #add8e6; /* Border color */
+    border: 2px solid #ff0055; /* Border color */
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 30px;
