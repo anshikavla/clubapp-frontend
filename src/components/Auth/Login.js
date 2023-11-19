@@ -36,26 +36,33 @@ const Login = () => {
     }
 };
   return (
-    <div className="container">
-      <h2>Login</h2>
+    <div style={styles.container}>
       <form>
+      <h2>Login</h2>
         <label>
-          Username:
+          Username :
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <br />
         <label>
-          Password:
+          Password :
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
-        <button type="button" onClick={handleLogin}>Login</button>
+        <button type="button" onClick={handleLogin} id="loginBtn">Login</button>
+        <h3>
+        Don't have an account?  <Link to="/register">Register</Link>
+      </h3>
       </form>
-      <p>
-        Don't have an account? <Link to="/register">Register</Link>
-      </p>
     </div>
   );
 };
-
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  }
+};
 export default Login;

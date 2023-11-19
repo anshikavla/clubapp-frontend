@@ -27,6 +27,7 @@ const Profile = () => {
   }, [storedUsername]);
 
   return (
+    
     <div className='profile-container'>
       <h1 class="profile-heading">User Profile</h1>
       {profileData ? (
@@ -38,6 +39,7 @@ const Profile = () => {
 
           {/* Display other profile data attributes here */}
         </div>
+
       ) : (
         <p>No profile data available</p>
       )}

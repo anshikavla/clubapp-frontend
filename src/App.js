@@ -4,7 +4,7 @@ import Login from './components/Auth/Login.js';
 import Register from './components/Auth/Register';
 import HomePage from './components/Home/HomePage';
 import Wishlist from './components/Home/Wishlist';
-import Profile from './components/Home/Profile';
+import Profile_main from './components/Home/Profile_main';
 import ClubDetail from './components/Club/ClubDetail';
 import TodayEvents from './components/Events/TodayEvents';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/home" element={<HomePage/>} />
           <Route path="/wishlist" element={<Wishlist/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<Profile_main/>} />
           <Route path="/club/:id" element={<ClubDetail/>} />
           <Route path="/today-events" element={<TodayEvents/>} />
         </Routes>

@@ -32,36 +32,45 @@ const Register = () => {
 }
 
   return (
-    <div className="container">
-      <h2>Register</h2>
+    <div style={styles.container}>
       <form>
+      <h2>Register</h2>
         <label>
-          Username:
+          Username :
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <br />
         <label>
-          Password:
+          Password :
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
         <label>
-          Phone:
+          Phone :
           <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
         </label>
         <br />
         <label>
-          Email Id:
+          Email Id :
           <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} />
         </label>
         <br />
         <button type="button" onClick={handleRegister}>Register</button>
+        <h3>
+        Already have an account ? <Link to="/login">Login</Link>
+      </h3>
       </form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+
     </div>
   );
 };
 
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  }
+};
 export default Register;

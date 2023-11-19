@@ -1,13 +1,11 @@
 // Header.js
 import React from 'react';
-
+import LogoutButton from './Logout';
 const Header = () => {
   return (
     <header>
       <input type="text" id="searchBar" placeholder="Search..." />
-      <a href="#" id="logoutBtn">
-        Logout
-      </a>
+      <LogoutButton/>
     </header>
   );
 };
