@@ -6,6 +6,7 @@ import HomePage from './components/Home/HomePage';
 import Wishlist from './components/Home/Wishlist';
 import Profile_main from './components/Home/Profile_main';
 import ClubDetail from './components/Club/ClubDetail';
+import ClubList from './components/Home/ClubList.js';
 import TodayEvents from './components/Events/TodayEvents';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
           <Route path="/home" element={<HomePage/>} />
           <Route path="/wishlist" element={<Wishlist/>} />
           <Route path="/profile" element={<Profile_main/>} />
-          <Route path="/club/:id" element={<ClubDetail/>} />
+          <Route path="/club" element={<ClubList/>} />
+          <Route path="/club/:clubname" element={<ClubDetail/>} />
           <Route path="/today-events" element={<TodayEvents/>} />
         </Routes>
       </div>

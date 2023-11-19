@@ -11,7 +11,6 @@ const App = () => {
       <Header />
       <Sidebar />
       <main>
-        <Filters />
         <ClubList />
       </main>
       {/* Include your footer here */}

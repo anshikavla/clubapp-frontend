@@ -5,7 +5,10 @@ mongoose.connect(url).then((ans) => {
 }).catch((err) => { 
     console.log("Error in the Connection") 
 }) 
+
+
 const User = require("./Schemas/User");
+const Club = require("./Schemas/Club");
 var http = require('http')
 const express = require('express');
 const app = express();
@@ -25,13 +28,13 @@ function randomString(length, chars) {
   
 app.post("/register", async (req, res) => {
     var rString = randomString(6, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
- 
     const user = await User.create({ 
       username: req.body.username, 
       password: req.body.password,
       phone : req.body.phone,
       emailId : req.body.emailId,
-      registerNumber: rString
+      registerNumber: rString,
+      wishlist : ""
     }); 
     return res.status(200).json(user); 
   });
@@ -44,24 +47,74 @@ app.post("/register", async (req, res) => {
       if (!username) {
         return res.status(400).json({ error: "Username parameter is required" });
       }
-  
-      const profile = await User.findOne({ username : username });
-      
+      const profile = await User.findOne({ username : username });  
       if (!profile) {
         return res.status(404).json({ error: "Profile not found" });
       }
       res.json({
-                                        username : profile.username , 
-                                        emailId :profile.emailId ,
-                                        phone: profile.phone,
-                                        registerNumber : profile.registerNumber
-                                    });
+                username : profile.username , 
+                emailId :profile.emailId ,
+                phone: profile.phone,
+                registerNumber : profile.registerNumber
+                  });
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Server error' });
     }
   });
  
+  app.get('/clubs', async (req, res) => {
+    try {
+      const things = await Club.find(); 
+      res.json(things);
+    } catch (err) {
+      console.error('Error retrieving data:', err);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+
+  app.get('/club', async (req, res) => {
+    const { clubname } = req.query;
+    console.log(clubname)
+    try {
+      if (!clubname) {
+        return res.status(400).json({ error: "Club name parameter is required" });
+      }
+      const profile = await Club.findOne({ Club_name : clubname });  
+      if (!profile) {
+        return res.status(404).json({ error: "Club not found" });
+      }
+      res.json(profile);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+
+  app.post("/updatewishlist", async (req, res) => {
+    console.log("In wish")
+    // try {
+    //   const { username } = req.body.username;
+    //   const { wishlist } = req.body.wishlist;
+  
+    //   const filter = { username: username };
+    //   const update = { wishlist : wishlist };
+    //   console.log(filter)
+
+    //   const result =  await User.findOneAndUpdate(
+    //     filter,{$set:update}
+    //   );
+ 
+    //   if (!result) {
+    //     return res.status(404).send('User not found or not updated');
+    //   }
+    //   return res.status(200).json(result);
+    // } catch (error) {
+    //   console.error('Error:', error);
+    //   return res.status(500).send('Internal Server Error');
+    // }
+  });
+
 
 app.post("/login", async function(req, res){ 
     try { 

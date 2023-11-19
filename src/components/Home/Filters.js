@@ -7,24 +7,22 @@ const Filters = () => {
     <section id="filters">
       <h2>Filters</h2>
       <div className="filter-container">
-        {/* Example: */}
         <div className="filter-box">
-          <label htmlFor="allFilter">All</label>
-          <input type="checkbox" id="allFilter" />
+          <label htmlFor="academicFilter">Coding</label>
+          <input type="checkbox" id="Coding" />
         </div>
         <div className="filter-box">
-          <label htmlFor="academicFilter">Academic</label>
-          <input type="checkbox" id="academicFilter" />
+          <label htmlFor="sportsFilter">Laws</label>
+          <input type="checkbox" id="Laws" />
         </div>
         <div className="filter-box">
-          <label htmlFor="sportsFilter">Sports</label>
-          <input type="checkbox" id="sportsFilter" />
+          <label htmlFor="artsFilter">Dance</label>
+          <input type="checkbox" id="Dance" />
         </div>
-        <div className="filter-box">
-          <label htmlFor="artsFilter">Arts</label>
-          <input type="checkbox" id="artsFilter" />
+          <div className="filter-box">
+          <label htmlFor="artsFilter">Fashion</label>
+          <input type="checkbox" id="Fashion" />
         </div>
-        {/* Add more filter boxes as needed */}
       </div>
     
       

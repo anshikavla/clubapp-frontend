@@ -16,6 +16,9 @@ var User = new Schema({
     },
     registerNumber : {
         type : String
+    },
+    wishlist : {
+        type : String
     }
 }) 
   

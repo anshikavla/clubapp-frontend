@@ -1,52 +1,42 @@
-// ClubList.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Filters from './Filters';
+import { useNavigate } from 'react-router-dom';
 
 const ClubList = () => {
+  const [items, setItems] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    axios.get('http://localhost:5000/clubs')
+      .then(response => {
+        setItems(response.data); 
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); 
+
+  const handleClick = (itemName) => {
+    alert(`You clicked on ${itemName}`);
+    navigate(`/club/${itemName}`);
+    // Add your click event logic here
+  };
+
   return (
-    
-    <section id="clubList">
-        <h3 style={{ fontSize: '24px' }}>Explore Clubs</h3>
-      {/* Map through club data to render the list */}
-      {/* Example: */}
-      <article className="club">
-        <img src="club1.jpg" alt="Club 1" />
-        <h3>Club 1</h3>
-        <p>Description of Club 1.</p>
-      </article>
-
-      <article className="club">
-        <img src="club2.jpg" alt="Club 2" />
-        <h3>Club 2</h3>
-        <p>Description of Club 2.</p>
-      </article>
-
-      <article className="club">
-        <img src="club3.jpg" alt="Club 3" />
-        <h3>Club 3</h3>
-        <p>Description of Club 3.</p>
-      </article>
-
-      <article className="club">
-        <img src="club4.jpg" alt="Club 4" />
-        <h3>Club 4</h3>
-        <p>Description of Club 4.</p>
-      </article>
-
-      <article className="club">
-        <img src="club5.jpg" alt="Club 5" />
-        <h3>Club 5</h3>
-        <p>Description of Club 5.</p>
-      </article>
-
-      <article className="club">
-        <img src="club6.jpg" alt="Club 6" />
-        <h3>Club 6</h3>
-        <p>Description of Club 6.</p>
-      </article>
-
-      
-      {/* Add more clubs as needed */}
-    </section>
+    <div>
+    <Filters />
+    <article>
+      <h1>List of Items</h1>
+      <ul>
+        {items.map((item, index) => (
+          <article className="club" onClick={() => handleClick(item.Club_name)}>
+          <h3>{item.Club_name}</h3>
+          {/*<img src={item.Club_image}/>*/}
+          </article>
+        ))}
+      </ul>
+    </article>
+    </div>
   );
 };
 
