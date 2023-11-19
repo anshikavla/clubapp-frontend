@@ -1,0 +1,29 @@
+/* profile.css */
+
+.profile-container {
+    border: 2px solid #ff0055;
+    padding: 40px;
+    width: 400px;
+    background-color: #0d0d0e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: left; /* Left-align the text within the container */
+}
+
+.profile-heading {
+    text-align: center; /* Center-align only the heading */
+}
+
+/* Common styling for profile information items */
+.profile-info {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Hover effect adjustments */
+.profile-container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}

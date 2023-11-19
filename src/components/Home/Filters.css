@@ -1,0 +1,28 @@
+/* Filters.css */
+#filters {
+    /* Add any additional styling for the section if needed */
+  }
+  
+  .filter-container {
+    display: flex;
+    gap: 10px;
+   
+  }
+  
+  .filter-box {
+    background-color:#cccccc;
+    display: flex; /* Use flexbox for a horizontal layout */
+    align-items: center; /* Center items vertically within the container */
+    border: 1px solid #ccc; /* Add border for the box */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; 
+    color: #000/* Change cursor to pointer to indicate interactivity */
+  }
+  
+  .filter-box label {
+    margin-right: 5px; /* Add some spacing between the label and checkbox */
+  }
+  
+  /* Add any additional styling for labels and selects as needed */
+  

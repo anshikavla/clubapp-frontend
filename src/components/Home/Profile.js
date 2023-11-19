@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './profile.css';
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
   const storedUsername = localStorage.getItem('username') || ''; // Retrieve value from localStorage
@@ -27,10 +27,10 @@ const Profile = () => {
   }, [storedUsername]);
 
   return (
-    <div>
-      <h1>User Profile</h1>
+    <div className='profile-container'>
+      <h1 class="profile-heading">User Profile</h1>
       {profileData ? (
-        <div>
+        <div class="profile-info">
           <p>Username: {profileData.data.username}</p>
           <p>Email Id: {profileData.data.emailId}</p>
           <p>Phone Number: {profileData.data.phone}</p>
