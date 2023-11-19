@@ -16,7 +16,8 @@
     border: 1px solid #ccc; /* Add border for the box */
     padding: 10px; /* Add padding for spacing */
     border-radius: 5px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    cursor: pointer; 
+    color: #000/* Change cursor to pointer to indicate interactivity */
   }
   
   .filter-box label {
