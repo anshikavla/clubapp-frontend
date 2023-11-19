@@ -34,7 +34,8 @@ const ClubDetail = () => {
     console.log(profileData)
   },[profileData]);
 
-  const addToWishlist = async () => {
+  const addToWishlist = async (e) => {
+    e.preventDefault();
     try {
       setUsername(localStorage.getItem("username"))
       setWishlist(clubname)
@@ -49,7 +50,7 @@ const ClubDetail = () => {
               'Content-Type': 'application/json'
           }
       })
-        } 
+        }    
     catch (error) {
       console.error('Error adding to wishlist:', error);
     }

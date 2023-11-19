@@ -17,9 +17,7 @@ var User = new Schema({
     registerNumber : {
         type : String
     },
-    wishlist : {
-        type : String
-    }
+    wishlist: { type: [String] }
 }) 
   
 User.plugin(passportLocalMongoose); 

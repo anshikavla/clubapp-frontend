@@ -62,7 +62,23 @@ app.post("/register", async (req, res) => {
       res.status(500).json({ error: 'Server error' });
     }
   });
- 
+  app.get('/wishlist', async (req, res) => {
+    const { username } = req.query;
+    console.log(username)
+    try {
+      if (!username) {
+        return res.status(400).json({ error: "Username parameter is required" });
+      }
+      const profile = await User.findOne({ username : username });  
+      if (!profile) {
+        return res.status(404).json({ error: "Profile not found" });
+      }
+      res.json(profile);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
   app.get('/clubs', async (req, res) => {
     try {
       const things = await Club.find(); 
@@ -93,26 +109,21 @@ app.post("/register", async (req, res) => {
 
   app.post("/updatewishlist", async (req, res) => {
     console.log("In wish")
-    // try {
-    //   const { username } = req.body.username;
-    //   const { wishlist } = req.body.wishlist;
-  
-    //   const filter = { username: username };
-    //   const update = { wishlist : wishlist };
-    //   console.log(filter)
-
-    //   const result =  await User.findOneAndUpdate(
-    //     filter,{$set:update}
-    //   );
+    try {
+      const filter = { username: req.body.username };
+      //const update = { wishlist : req.body.wishlist };
+      const result =  await User.findOneAndUpdate(
+        filter,{ $addToSet: { wishlist: req.body.wishlist } },
+      );
  
-    //   if (!result) {
-    //     return res.status(404).send('User not found or not updated');
-    //   }
-    //   return res.status(200).json(result);
-    // } catch (error) {
-    //   console.error('Error:', error);
-    //   return res.status(500).send('Internal Server Error');
-    // }
+      if (!result) {
+        return res.status(404).send('User not found or not updated');
+      }
+      return res.status(200).json(result);
+    } catch (error) {
+      console.error('Error:', error);
+      return res.status(500).send('Internal Server Error');
+    }
   });
 
 

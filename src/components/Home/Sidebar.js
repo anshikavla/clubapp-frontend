@@ -16,7 +16,7 @@ const Sidebar = () => {
         <Link to="/profile">Profile</Link>
         </li>
         <li>
-          <a href="#">Wishlist</a>
+        <Link to="/wishlist">Wishlist</Link>
         </li>
       </ul>
     </aside>
