@@ -33,9 +33,15 @@ const Wishlist = () => {
     setWishlist(wishlistData.wishlist)
   },[wishlistData]);
 
+  // useEffect(() =>{
+  //   console.log(wishlistData.wishlist)
+  // },[wishlist]);
+
   return (
     <div>
       <h1>Wishlist</h1>
+      {wishlist ? (
+      <div>
       <br></br>
       <h2>Hey {wishlistData.username}!!</h2>
       <br></br>
@@ -47,6 +53,11 @@ const Wishlist = () => {
           <li key={index}>{item}</li>
         ))}
       </ul>
+</div>
+      ) : (
+        <p>No wishlist data available</p>
+      )}
+
       {/* Display the user's wishlist content here */}
     </div>
   );

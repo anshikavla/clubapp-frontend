@@ -74,6 +74,7 @@ app.post("/register", async (req, res) => {
         return res.status(404).json({ error: "Profile not found" });
       }
       res.json(profile);
+      console.log(profile);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Server error' });
@@ -115,7 +116,7 @@ app.post("/register", async (req, res) => {
       const result =  await User.findOneAndUpdate(
         filter,{ $addToSet: { wishlist: req.body.wishlist } },
       );
- 
+      console.log(result)
       if (!result) {
         return res.status(404).send('User not found or not updated');
       }

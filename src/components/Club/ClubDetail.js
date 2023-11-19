@@ -34,14 +34,13 @@ const ClubDetail = () => {
     console.log(profileData)
   },[profileData]);
 
-  const addToWishlist = async (e) => {
-    e.preventDefault();
+  const addToWishlist = async () => {
     try {
       setUsername(localStorage.getItem("username"))
       setWishlist(clubname)
       console.log(username)
       console.log(wishlist)
-      //alert('Added to wishlist!!');
+      // alert('Added to wishlist!!');
       let result = await fetch(
         "http://localhost:5000/updatewishlist", {
           method: "post",
