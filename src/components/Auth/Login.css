@@ -26,13 +26,22 @@
     background-color: #5645a0;
     color: white;
     padding: 10px;
-    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
   }
   
   button:hover {
     background-color: #5645a0;
   }
+  
+  button:active {
+    background-color: #2c255b; /* Change the color as desired for the clicked state */
+    border: 2px solid #f3eeef; /* Highlight the border when clicked */
+  }
+  
   
   p {
     margin-top: 20px;

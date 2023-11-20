@@ -7,14 +7,16 @@
 .filter-container {
   display: flex;
   gap: 10px;
+  justify-content: flex-start; /* Align items to the left */
+  width: 100%; /* Ensure the container takes full width */
+  margin: 0; /* Reset margin to remove any default spacing */
 }
 
-
 .filter-box {
-  background-color: #cccccc;
-  display: inline-block; /* Use flexbox for a horizontal layout */
+  background-color: #131313;
+  display: flex; /* Use flexbox for a horizontal layout */
   align-items: center; /* Center items vertically within the container */
-  border: 1px solid #ccc; /* Add border for the box */
+  border: 2px solid #ff0055; /* Add border for the box */
   padding: 10px; /* Add padding for spacing */
   border-radius: 5px; /* Add border radius for rounded corners */
   cursor: pointer; /* Change cursor to pointer to indicate interactivity */
@@ -22,7 +24,46 @@
 
 .filter-box label {
   margin-right: 5px; /* Add some spacing between the label and checkbox */
-  color: black; /* Set text color to black */
+  color: rgb(252, 249, 249); /* Set text color to black */
 }
 
-/* Add any additional styling for labels and selects as needed */
+.filter-box input[type="radio"] {
+  margin-right: 5px; /* Add spacing between the radio button and text */
+}
+/* Filters.css */
+
+#filters {
+  /* Add any additional styling for the section if needed */
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+}
+
+.filter-box {
+  background-color: #131313;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ff0055;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-box label {
+  margin-right: 5px;
+  color: rgb(252, 249, 249);
+}
+
+.filter-box input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Add the following custom styling for the button */
+button[type="submit"] {
+  margin-top: -47px; /* Adjust the top margin to move the button up */
+}

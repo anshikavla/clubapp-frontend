@@ -12,11 +12,11 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
-    width: 200px;
+    width: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0%, 10%);
+    transform: translate(-30%, 10%);
 }
 
 

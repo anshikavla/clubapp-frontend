@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
-
+import './Filters.css';
 const Filters = ({ setFilteredClubs }) => {
   const [selectedType, setSelectedType] = useState('');
 
@@ -45,6 +45,7 @@ const Filters = ({ setFilteredClubs }) => {
   return (
     <section id="filters">
       <h2>Filters</h2>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <div className="filter-container">
           <div className="filter-box">
@@ -85,11 +86,11 @@ const Filters = ({ setFilteredClubs }) => {
           </div>
           <div className="filter-box">
             <label>
-              <input
+              <input 
                 type="radio"
                 name="clubType"
-                value="dance"
-                checked={selectedType === 'dance'}
+                value="Dance"
+                checked={selectedType === 'Dance'}
                 onChange={handleTypeChange}
               />
               Dance

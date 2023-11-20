@@ -32,7 +32,7 @@ header {
 #searchBar {
     width: 750px; /* Responsive width */
     padding: 15px;
-    border: 1px solid #333; /* Border color */
+    border: 1px solid #080808; /* Border color */
     border-radius: 20px; /* Larger rounded corners */
     overflow: hidden;
     transition: all 0.3s ease; /* Smooth transition */
@@ -48,7 +48,7 @@ aside {
     background-color: #000; /* Dark blue */
     color: #fff;
     width: 200px;
-    height: 100vh;
+    height: 200vh;
     float: left;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
     border-right: 5px solid #fff; 
@@ -57,7 +57,7 @@ aside {
 
 ul {
     list-style: none;
-    padding: 15px;
+    padding: 30px;
 }
 
 li {
@@ -125,7 +125,7 @@ select {
     display: inline-block;
     width: calc(33.33% - 30px);
     box-sizing: border-box;
-    margin-right: 20px;
+    margin-right: 25px;
     vertical-align: top;
     height: 250px;
     transition: transform 0.3s ease; /* Smooth transition on hover */
