@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './wishlist.css';
 const Wishlist = () => {
 
   const [wishlistData, setwishlistData] = useState('');
@@ -39,15 +39,16 @@ const Wishlist = () => {
 
   return (
     <div>
-      <h1>Wishlist</h1>
+      <h1 class="wishlist-heading">Wishlist</h1>
       {wishlist ? (
       <div>
       <br></br>
-      <h2>Hey {wishlistData.username}!!</h2>
+      <h2 class="wishlist-heading">Hey {wishlistData.username}!!</h2>
       <br></br>
       <br></br>
-      <h3> Your interested clubs are : </h3>
-      <ul>
+      <h3 class="wishlist-heading"> Your interested clubs are : </h3>
+      <br></br>
+      <ul class="wishlist-container">
         {wishlist.map((item, index) => (
           // Use 'index' as the 'key' if each item has a unique identifier
           <li key={index}>{item}</li>

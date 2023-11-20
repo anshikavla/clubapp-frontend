@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const url = "mongodb://localhost:27017/"
+const path = require('path');
+const express = require('express');
+
 mongoose.connect(url).then((ans) => { 
     console.log("ConnectedSuccessful") 
 }).catch((err) => { 
@@ -10,12 +13,16 @@ mongoose.connect(url).then((ans) => {
 const User = require("./Schemas/User");
 const Club = require("./Schemas/Club");
 var http = require('http')
-const express = require('express');
+
 const app = express();
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const cors = require("cors");
 console.log("App listen at port 5000");
 app.use(express.json());
 app.use(cors());
+
+
 app.get("/", (req, resp) => {
     resp.send("App is Working");
 });

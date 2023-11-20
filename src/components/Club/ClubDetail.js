@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../Home/Sidebar';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import './ClubDetail.css';
 const ClubDetail = () => {
   const [profileData, setProfileData] = useState('');
   const [username, setUsername] = useState('');
@@ -56,22 +56,30 @@ const ClubDetail = () => {
   };
 
   return (
-    <div>
-      <h2>Club Details</h2>
+    <div className='club-container'>
+      <h2 class="club-heading">Club Details</h2>
       <p></p>
       <p></p>
       <p></p>
-      <p>Name : {profileData.Club_name}</p>
-      <p>Type : {profileData.Type}</p>
-      <p>Details : {profileData.Club_details}</p>
-      <p>Links : {profileData.Club_links}</p>
-      <p>Owner : {profileData.Club_owner_name}</p>
-      <p>Contact no. : {profileData.Club_owner_phone_no}</p>
-      <p>Events : {profileData.Club_events}</p>
-
+      <div class="profile-info">
+      <p><i>Name :</i> {profileData.Club_name}</p>
+      <br></br>
+      <p><i>Type : </i>{profileData.Type}</p>
+      <br></br>
+      <p><i>Description :</i><br></br><br></br> {profileData.Club_details}</p>
+      <br></br>
+      <p><i>Links : </i>{profileData.Club_links}</p>
+      <br></br>
+      <p><i>Owner : </i>{profileData.Club_owner_name}</p>
+      <br></br>
+      <p><i>Contact no. : </i>{profileData.Club_owner_phone_no}</p>
+      <br></br>
+      <p><i>Events : </i>{profileData.Club_events}</p>
+      <br></br>
     <button onClick={addToWishlist}>
-      Wishlist
+       Add To Wishlist
     </button>
+    </div>
     </div>
   );
 };

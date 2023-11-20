@@ -31,7 +31,10 @@ const ClubList = () => {
         {items.map((item, index) => (
           <article className="club" onClick={() => handleClick(item.Club_name)}>
           <h3>{item.Club_name}</h3>
-          {/*<img src={item.Club_image}/>*/}
+           <br></br>
+          {item.Club_image && (
+                <img src={`http://localhost:5000/uploads/${item.Club_image}`} alt={item.Club_name} />
+              )}
           </article>
         ))}
       </ul>
