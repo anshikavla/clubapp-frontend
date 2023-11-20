@@ -9,9 +9,10 @@
   gap: 10px;
 }
 
+
 .filter-box {
   background-color: #cccccc;
-  display: flex; /* Use flexbox for a horizontal layout */
+  display: inline-block; /* Use flexbox for a horizontal layout */
   align-items: center; /* Center items vertically within the container */
   border: 1px solid #ccc; /* Add border for the box */
   padding: 10px; /* Add padding for spacing */
