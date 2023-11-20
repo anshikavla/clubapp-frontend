@@ -108,6 +108,36 @@ app.post("/register", async (req, res) => {
     }
   });
 
+  app.get('/filteredclubs', async (req, res) => {
+    const { type } = req.query;
+    console.log(type)
+    try {
+      if (!type) {
+        return res.status(400).json({ error: "Type parameter is required" });
+      }
+      const profile = await Club.find({ Type : type });  
+      //console.log(profile)
+      if (!profile) {
+        return res.status(404).json({ error: "Club not found" });
+      }
+      res.json(profile);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+  app.get('/club', async (req, res) => {
+    try {
+      const allClubs = await Club.find(); // Retrieve all clubs from the database
+      res.json({ clubs: allClubs }); // Send the retrieved clubs as JSON
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+
+
+
   app.post("/updatewishlist", async (req, res) => {
     console.log("In wish")
     try {
