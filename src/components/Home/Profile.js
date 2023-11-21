@@ -32,10 +32,14 @@ const Profile = () => {
       <h1 class="profile-heading">User Profile</h1>
       {profileData ? (
         <div class="profile-info">
-          <p>Username: {profileData.data.username}</p>
-          <p>Email Id: {profileData.data.emailId}</p>
-          <p>Phone Number: {profileData.data.phone}</p>
-          <p>Register Number: {profileData.data.registerNumber}</p>
+          <br></br>
+          <p><i>Username : </i>{profileData.data.username}</p>
+          <br></br>
+          <p><i>Email Id : </i>{profileData.data.emailId}</p>
+          <br></br>
+          <p><i>Phone Number : </i>{profileData.data.phone}</p>
+          <br></br>
+          <p><i>Register Number : </i>{profileData.data.registerNumber}</p>
 
           {/* Display other profile data attributes here */}
         </div>

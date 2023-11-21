@@ -36,28 +36,28 @@ const Register = () => {
       <form>
       <h2>Register</h2>
         <label>
-          Username :
+          <i>Username :</i>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <br />
         <label>
-          Password :
+          <i>Password :</i>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
         <label>
-          Phone :
+          <i>Phone :</i>
           <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
         </label>
         <br />
         <label>
-          Email Id :
+          <i>Email Id :</i>
           <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} />
         </label>
         <br />
         <button type="button" onClick={handleRegister}>Register</button>
         <h3>
-        Already have an account ? <Link to="/login">Login</Link>
+        <i>Already have an account ?</i> <Link to="/login">Login</Link>
       </h3>
       </form>
 

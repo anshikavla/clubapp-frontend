@@ -40,18 +40,18 @@ const Login = () => {
       <form>
       <h2>Login</h2>
         <label>
-          Username :
+          <i>Username :</i>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <br />
         <label>
-          Password :
+          <i>Password :</i>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
         <button type="button" onClick={handleLogin} id="loginBtn">Login</button>
         <h3>
-        Don't have an account?  <Link to="/register">Register</Link>
+        <i>Don't have an account?</i>  <Link to="/register">Register</Link>
       </h3>
       </form>
     </div>

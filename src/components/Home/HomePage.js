@@ -1,17 +1,22 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Filters from './Filters';
 import ClubList from './ClubList';
 import './styles.css';
+
 const App = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <div>
-      <Header />
+      <Header onSearch={handleSearch} />
       <Sidebar />
       <main>
-        <ClubList />
+        <ClubList searchQuery={searchQuery} />
       </main>
       {/* Include your footer here */}
     </div>
