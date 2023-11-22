@@ -1,0 +1,29 @@
+/* TodayEvents.css */
+
+.today-events {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.top-left {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-box {
+  background-color: #0d0d0e;
+  border: 2px solid #ff0055;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.event-info {
+  margin-bottom: 8px;
+}

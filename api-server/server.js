@@ -12,6 +12,7 @@ mongoose.connect(url).then((ans) => {
 
 const User = require("./Schemas/User");
 const Club = require("./Schemas/Club");
+const Events = require("./Schemas/Events"); // Import the Events model
 var http = require('http')
 
 const app = express();
@@ -21,6 +22,8 @@ const cors = require("cors");
 console.log("App listen at port 5000");
 app.use(express.json());
 app.use(cors());
+
+
 
 
 app.get("/", (req, resp) => {
@@ -142,7 +145,27 @@ app.post("/register", async (req, res) => {
       res.status(500).json({ error: 'Server error' });
     }
   });
-
+  app.get('/events', async (req, res) => {
+    const { date } = req.query;
+  
+    try {
+      if (!date || isNaN(Date.parse(date))) {
+        return res.status(400).json({ error: "Date parameter is required" });
+      }
+  
+      // Assuming your Event schema has a 'eventDate' field for event dates
+      const events = await Events.find({ eventDate: new Date(date) }); // Modify the query based on your schema
+  
+      res.json(events);
+      const eventDate = new Date(date);
+      console.log(eventDate);
+      console.log(events);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
+  
 
 
   app.post("/updatewishlist", async (req, res) => {

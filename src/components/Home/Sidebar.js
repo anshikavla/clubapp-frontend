@@ -11,7 +11,7 @@ const Sidebar = () => {
         <br></br><br></br>  
         </li>
         <li>
-          <a href="#">Calendar</a>
+          <Link to="/events">Calendar</Link>
           <br></br><br></br> 
         </li>
         <li>

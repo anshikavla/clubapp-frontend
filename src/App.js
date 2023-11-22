@@ -7,7 +7,7 @@ import Wishlist_main from './components/Home/Wishlist_main.js';
 import Profile_main from './components/Home/Profile_main';
 import ClubDetail from './components/Club/ClubDetail';
 import ClubList from './components/Home/ClubList.js';
-import TodayEvents from './components/Events/TodayEvents';
+import TodayEvents_main from './components/Events/TodayEvents_main';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/profile" element={<Profile_main/>} />
           <Route path="/club" element={<ClubList/>} />
           <Route path="/club/:clubname" element={<ClubDetail/>} />
-          <Route path="/today-events" element={<TodayEvents/>} />
+          <Route path="/events" element={<TodayEvents_main/>} />
         </Routes>
       </div>
     </Router>
